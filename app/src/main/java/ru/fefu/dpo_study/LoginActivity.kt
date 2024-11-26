@@ -56,7 +56,7 @@ class LoginActivity : ComponentActivity() {
                         .padding(innerPadding)
                         .padding(16.dp, 0.dp)
                     ){
-                        topBar(
+                        TopBar(
                             title="Вход",
                             backButton={startMainActivity()}
                         )
@@ -68,9 +68,9 @@ class LoginActivity : ComponentActivity() {
                         )
                         Spacer(Modifier.height(16.dp))
 
-                        usualField("Логин")
+                        UsualField("Логин")
                         Spacer(Modifier.height(16.dp))
-                        passwordField()
+                        PasswordField()
                         Spacer(Modifier.height(32.dp))
                         Button(
                             onClick = {},
@@ -88,7 +88,7 @@ class LoginActivity : ComponentActivity() {
 }
 
 @Composable
-fun topBar(title: String = "", backButton: () -> Unit){
+fun TopBar(title: String = "", backButton: () -> Unit){
     Row(){
         Button(
             onClick = backButton,
@@ -106,9 +106,9 @@ fun topBar(title: String = "", backButton: () -> Unit){
 }
 
 @Composable
-fun passwordField(placeholder : String = "Пароль"){
-    var passwordVisible = remember { mutableStateOf(false)}
-    var password = remember { mutableStateOf("") }
+fun PasswordField(placeholder : String = "Пароль"){
+    val passwordVisible = remember { mutableStateOf(false)}
+    val password = remember { mutableStateOf("") }
     OutlinedTextField(
         value = password.value,
         onValueChange = {password.value = it.trimEnd{ it == '\n'}},
@@ -133,8 +133,8 @@ fun passwordField(placeholder : String = "Пароль"){
 }
 
 @Composable
-fun usualField(placeholder: String = "Логин"){
-    var text = remember { mutableStateOf("") }
+fun UsualField(placeholder: String = "Логин"){
+    val text = remember { mutableStateOf("") }
     OutlinedTextField(
         value = text.value,
         onValueChange = {text.value = it.trimEnd('\n',' ')},

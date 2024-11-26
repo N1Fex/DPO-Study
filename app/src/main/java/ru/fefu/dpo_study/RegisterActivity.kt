@@ -49,19 +49,19 @@ class RegisterActivity : ComponentActivity() {
                     Column(modifier = Modifier
                         .padding(innerPadding)
                         .padding(16.dp, 0.dp)) {
-                        topBar(title = "Регистрация", backButton = {startMainActivity()})
+                        TopBar(title = "Регистрация", backButton = {startMainActivity()})
                         Spacer(Modifier.height(16.dp))
-                        usualField(placeholder = "Логин")
+                        UsualField(placeholder = "Логин")
                         Spacer(Modifier.height(16.dp))
-                        usualField(placeholder = "Имя или никнейм")
+                        UsualField(placeholder = "Имя или никнейм")
                         Spacer(Modifier.height(16.dp))
-                        passwordField(placeholder = "Пароль")
+                        PasswordField(placeholder = "Пароль")
                         Spacer(Modifier.height(16.dp))
-                        passwordField(placeholder = "Повторите пароль")
+                        PasswordField(placeholder = "Повторите пароль")
                         Spacer(Modifier.height(24.dp))
                         Text(text="Пол", fontSize = 24.sp, fontWeight = FontWeight.Bold)
                         Spacer(Modifier.height(16.dp))
-                        radioGenderBlock()
+                        RadioGenderBlock()
                         Spacer(Modifier.height(32.dp))
                         Button(
                             onClick = {},
@@ -72,7 +72,7 @@ class RegisterActivity : ComponentActivity() {
                             Text(text="Зарегистрироваться", fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         }
                         Spacer(Modifier.height(24.dp))
-                        blockPPandUA()
+                        BlockPPandUA()
                     }
                 }
             }
@@ -81,7 +81,7 @@ class RegisterActivity : ComponentActivity() {
 }
 
 @Composable
-fun blockPPandUA(fontSize : TextUnit = 12.sp, lineHeight : TextUnit = 18.sp, fontWeight : FontWeight = FontWeight(400)){
+fun BlockPPandUA(fontSize : TextUnit = 12.sp, lineHeight : TextUnit = 18.sp, fontWeight : FontWeight = FontWeight(400)){
     val mAnnotatedLinkString = buildAnnotatedString {
 
         val text = "Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности и обработки персональных данных, а также принимаете пользовательское соглашение"
@@ -129,7 +129,7 @@ fun blockPPandUA(fontSize : TextUnit = 12.sp, lineHeight : TextUnit = 18.sp, fon
 }
 
 @Composable
-fun radioGenderBlock(selectedColor : Color = Color.Blue, textSize : TextUnit = 16.sp){
+fun RadioGenderBlock(selectedColor : Color = Color.Blue, textSize : TextUnit = 16.sp){
     val genders = listOf("Мужской", "Женскиий", "Другой")
     val (selectedOption, onOptionSelected) = remember{mutableStateOf(genders[0])}
     Column(Modifier.selectableGroup()) {
