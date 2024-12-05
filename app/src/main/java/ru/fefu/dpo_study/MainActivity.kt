@@ -26,13 +26,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.fefu.dpo_study.activities.LoginActivity
+import ru.fefu.dpo_study.activities.RegisterActivity
 import ru.fefu.dpo_study.ui.theme.DPOStudyTheme
+
 
 class MainActivity : ComponentActivity() {
 
     fun startLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+
     }
 
     fun startRegisterActivity() {
@@ -100,5 +104,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
     }
 }

@@ -1,4 +1,4 @@
-package ru.fefu.dpo_study
+package ru.fefu.dpo_study.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -39,6 +39,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.fefu.dpo_study.MainActivity
+import ru.fefu.dpo_study.R
 import ru.fefu.dpo_study.ui.theme.DPOStudyTheme
 
 class LoginActivity : ComponentActivity() {

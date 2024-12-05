@@ -1,4 +1,4 @@
-    package ru.fefu.dpo_study
+    package ru.fefu.dpo_study.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -33,6 +33,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.fefu.dpo_study.MainActivity
 import ru.fefu.dpo_study.ui.theme.DPOStudyTheme
 
 class RegisterActivity : ComponentActivity() {
